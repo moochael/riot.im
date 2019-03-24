@@ -14,3 +14,7 @@ tfplan
 
 # Secrets
 secrets.auto.tfvars
+
+### VSCode ###
+*.code-workspace
+
