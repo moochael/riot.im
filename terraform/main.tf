@@ -3,7 +3,7 @@ terraform {
   backend "s3" {
     endpoint = "sfo2.digitaloceanspaces.com"
     region = "us-west-1"
-    key = "terraform.tfstate"
+    key = "riot.im/terraform.tfstate"
     skip_requesting_account_id = true
     skip_credentials_validation = true
     skip_get_ec2_platforms = true
@@ -22,4 +22,7 @@ resource "digitalocean_droplet" "riot-homeserver" {
   name   = "riot.im"
   region = "sfo1"
   size   = "s-1vcpu-1gb"
+  ssh_keys = [982999]
 }
+
+#curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer b7d03a6947b217efb6f3ec3bd3504582" "https://api.digitalocean.com/v2/account/keys"

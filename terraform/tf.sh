@@ -46,6 +46,7 @@ elif [[ "$1" == "build" ]]; then
   terraform_init
   terraform_plan
   terraform_apply
+  rm $TFPLAN_FILE
   exit 0
 
 elif [[ "$1" == "destroy" ]]; then
